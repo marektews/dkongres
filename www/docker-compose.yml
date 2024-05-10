@@ -2,11 +2,9 @@ services:
   www:
     image: www
     restart: always
+    network_mode: host
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
-      - "127.0.0.1:80:80"
-      - "127.0.0.1:443:443"
-    networks:
-      - wan
-
-networks:
-  wan:
+      - "80:80"
+    #   - "443:443"

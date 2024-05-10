@@ -14,4 +14,4 @@ CREATE TABLE IF NOT EXISTS `DzialyPK` (
     UNIQUE KEY `id_UNIQUE` (`id`),
     FOREIGN KEY (`dzial_id`) REFERENCES `Dzialy`(`id`)
 ) 
-COMMENT 'Rejestracja i użytkowanie pojazdów działów kongresowych';
+COMMENT 'Rejestracja i uzytkowanie pojazdow dzialow kongresowych';

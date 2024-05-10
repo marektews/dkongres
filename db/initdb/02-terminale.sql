@@ -8,11 +8,11 @@ CREATE TABLE IF NOT EXISTS `Terminale` (
     UNIQUE KEY `id_UNIQUE` (`id`),
     UNIQUE KEY `name_UNIQUE` (`name`)
 ) 
-COMMENT 'Lista terminali autobusowych (grupowanie sektorów)';
+COMMENT 'Lista terminali autobusowych (grupowanie sektorow)';
 
 -- 
 -- Zainicjuj terminale i bufory zgodnie z ustaleniami działu parkingów
 -- 
-INSERT INTO Terminale (name, is_buffer) VALUES('Bufor', 1);
-INSERT INTO Terminale (name, assigned_buffer) 
-    SELECT 'Torwar', id FROM Terminale WHERE `name` = 'Bufor' LIMIT 1;
+INSERT INTO `Terminale` (name, is_buffer) VALUES('Bufor', 1);
+INSERT INTO `Terminale` (name, assigned_buffer) 
+    SELECT 'Torwar', id FROM `Terminale` WHERE `name` = 'Bufor' LIMIT 1;

@@ -1,0 +1,51 @@
+networks:
+  vnet:
+
+
+volumes:
+  broker_log:
+
+
+services:
+
+  broker:
+    image: eclipse-mosquitto
+    restart: always
+    networks:
+      - vnet
+    volumes:
+      - broker_log:/mosquitto/log
+    ports:
+      - "0.0.0.0:1883:1883"
+
+  db:
+    image: db
+    restart: always
+    networks:
+      - vnet
+    ports:
+      - "127.0.0.1:3306:3306"
+
+  restapi:
+    image: restapi
+    restart: always
+    depends_on:
+      - db
+      - broker
+    networks:
+      - vnet
+    ports:
+      - "127.0.0.1:8000:8000"
+
+  www:
+    image: www
+    restart: always
+    depends_on:
+      - restapi
+    volumes:
+      - ./www/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - vnet
+    ports:
+      - "0.0.0.0:80:80"
+      - "0.0.0.0:443:443"

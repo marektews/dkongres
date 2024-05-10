@@ -7,4 +7,4 @@ CREATE TABLE IF NOT EXISTS `SOA` (
     UNIQUE KEY `id_UNIQUE` (`id`),
     FOREIGN KEY (`rja_id`) REFERENCES `Rozklad`(`id`)
 )
-COMMENT 'System obsługi autokarów';
+COMMENT 'System obslugi autokarow';

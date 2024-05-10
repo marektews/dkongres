@@ -1,11 +1,8 @@
 services:
   db:
+    build:
+      context: .
     image: db
     restart: always
     ports:
-      - "127.0.0.1:3306:3306"
-    networks:
-      - wan
-
-networks:
-  wan:
+      - 127.0.0.1:3306:3306

@@ -12,4 +12,4 @@ CREATE TABLE IF NOT EXISTS `Rozklad` (
     PRIMARY KEY (`id`),
     UNIQUE KEY `id_UNIQUE` (`id`)
 )
-COMMENT 'Rozkład jazdy autobusów; planowane podstawienia i odjazdy';
+COMMENT 'Rozklad jazdy autobusow; planowane podstawienia i odjazdy';

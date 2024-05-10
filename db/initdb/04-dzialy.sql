@@ -7,4 +7,4 @@ CREATE TABLE IF NOT EXISTS `Dzialy` (
     PRIMARY KEY (`id`),
     UNIQUE KEY `id_UNIQUE` (`id`)
 ) 
-COMMENT 'Lista działów kongresowych';
+COMMENT 'Lista dzialow kongresowych';

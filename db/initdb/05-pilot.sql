@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS `Pilot` (
     PRIMARY KEY (`id`),
     UNIQUE KEY `id_UNIQUE` (`id`)
 ) 
-COMMENT 'Dane pilotów w autokarach';
+COMMENT 'Dane pilotow w autokarach';

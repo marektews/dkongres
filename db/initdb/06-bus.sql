@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `Bus` (
     PRIMARY KEY (`id`),
     UNIQUE KEY `id_UNIQUE` (`id`)
 )
-COMMENT 'Lista busów zborowych deklarowanych na kongres';
+COMMENT 'Lista busow zborowych deklarowanych na kongres';
 
 -- 
 -- Opisy wynikające z kodu źródłowego

@@ -17,4 +17,4 @@ CREATE TABLE IF NOT EXISTS `SRA` (
     FOREIGN KEY (`pilot2_id`) REFERENCES `Pilot`(`id`),
     FOREIGN KEY (`pilot3_id`) REFERENCES `Pilot`(`id`)
 )
-COMMENT 'System rejestracji autokarów';
+COMMENT 'System rejestracji autokarow';

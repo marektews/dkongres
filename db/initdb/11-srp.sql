@@ -14,4 +14,4 @@ CREATE TABLE IF NOT EXISTS `SRP` (
     UNIQUE KEY `id_UNIQUE` (`id`),
     FOREIGN KEY (`zbor_id`) REFERENCES `Zbory`(`id`)
 )
-COMMENT 'System rejestracji pojazdów';
+COMMENT 'System rejestracji pojazdow';

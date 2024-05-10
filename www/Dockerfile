@@ -74,8 +74,8 @@ RUN npm run build
 
 FROM nginx:latest
 
-# EXPOSE 80
-# EXPOSE 443
+EXPOSE 80
+EXPOSE 443
 
 COPY --from=devel /devel/admlogin/dist /usr/share/nginx/html/admin
 COPY --from=devel /devel/admsra/dist /usr/share/nginx/html/admin/sra
@@ -89,3 +89,6 @@ COPY --from=devel /devel/pk/dist /usr/share/nginx/html/pk
 COPY --from=devel /devel/sektor/dist /usr/share/nginx/html/sektor
 COPY --from=devel /devel/scanner/dist /usr/share/nginx/html/scanner
 COPY --from=devel /devel/monitoring/dist /usr/share/nginx/html/admin/monitoring
+
+# COPY ./nginx.conf /etc/nginx/
+# CMD ["nginx"]

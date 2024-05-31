@@ -1,5 +1,7 @@
 services:
   www:
+    build:
+      context: .
     image: www
     restart: always
     network_mode: host

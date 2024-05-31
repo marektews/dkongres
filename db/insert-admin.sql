@@ -1,1 +1,0 @@
-INSERT INTO `Users` (`login`, `hash`, `fn`, `ln`) SELECT 'admin', SHA2('_T1r2x3!', 256), 'Marek', 'Tews';

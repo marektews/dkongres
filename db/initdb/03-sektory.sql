@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `Sektory` (
 )
 COMMENT 'Przystanki autobusowe do transferu pasazerow';
 
-SET @tid = SELECT id FROM `Terminale` WHERE `name` = 'Torwar' and `is_buffer` = 0 LIMIT 1;
+SET @tid = (SELECT id FROM `Terminale` WHERE `name` = 'Torwar' and `is_buffer` = 0 LIMIT 1);
 INSERT INTO `Sektory` (`name`, `tid`) VALUES('Sektor 1', @tid);
 INSERT INTO `Sektory` (`name`, `tid`) VALUES('Sektor 2', @tid);
 INSERT INTO `Sektory` (`name`, `tid`) VALUES('Sektor 3', @tid);

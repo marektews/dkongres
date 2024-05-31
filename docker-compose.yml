@@ -8,6 +8,12 @@ volumes:
 
 services:
 
+  smtp:
+    image: namshi/smtp
+    restart: always
+    networks:
+      - vnet
+
   broker:
     image: eclipse-mosquitto
     restart: always
@@ -25,6 +31,7 @@ services:
       - vnet
     ports:
       - "127.0.0.1:3306:3306"
+      - "0.0.0.0:33060:3306"
 
   restapi:
     image: restapi

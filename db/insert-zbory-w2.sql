@@ -1,1 +1,0 @@
-INSERT INTO `Zbory` (`number`, `name`) VALUES(, '');

@@ -1,5 +1,7 @@
 services:
   restapi:
+    build:
+      context: .
     image: restapi
     restart: always
     network_mode: host

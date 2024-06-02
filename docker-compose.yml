@@ -45,12 +45,13 @@ services:
       - "127.0.0.1:8000:8000"
 
   www:
-    image: www
+    image: nginx
     restart: always
     depends_on:
       - restapi
     volumes:
       - ./www/nginx.conf:/etc/nginx/nginx.conf
+      - ./www/webroot:/usr/share/nginx/html
     networks:
       - vnet
     ports:

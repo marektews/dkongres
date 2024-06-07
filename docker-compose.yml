@@ -3,16 +3,14 @@ networks:
 
 
 volumes:
-  broker_log:
+  db-data:
+    external: true
+  broker-log:
+  certbot-etc:
+  certbot-var:
 
 
 services:
-
-  smtp:
-    image: namshi/smtp
-    restart: always
-    networks:
-      - vnet
 
   broker:
     image: eclipse-mosquitto
@@ -20,7 +18,7 @@ services:
     networks:
       - vnet
     volumes:
-      - broker_log:/mosquitto/log
+      - broker-log:/mosquitto/log
     ports:
       - "0.0.0.0:1883:1883"
 
@@ -29,6 +27,8 @@ services:
     restart: always
     networks:
       - vnet
+    volumes:
+      - db-data:/var/lib/mysql
     ports:
       - "127.0.0.1:3306:3306"
       - "0.0.0.0:33060:3306"
@@ -44,16 +44,32 @@ services:
     ports:
       - "127.0.0.1:8000:8000"
 
-  www:
-    image: nginx
+  nginx:
+    image: nginx:stable
     restart: always
     depends_on:
       - restapi
     volumes:
       - ./www/nginx.conf:/etc/nginx/nginx.conf
+      - ./www/sslv1:/etc/nginx/sslv1
       - ./www/webroot:/usr/share/nginx/html
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
     networks:
       - vnet
     ports:
       - "0.0.0.0:80:80"
       - "0.0.0.0:443:443"
+      - "0.0.0.0:8080:8080"
+
+  # certbot:
+  #   image: certbot/certbot
+  #   networks:
+  #     - vnet
+  #   volumes:
+  #     - ./www/webroot:/usr/share/nginx/html:rw
+  #     - certbot-etc:/etc/letsencrypt
+  #     - certbot-var:/var/lib/letsencrypt
+  #   depends_on:
+  #     - nginx
+  #   command: certonly --webroot --webroot-path=/usr/share/nginx/html --email marek.tews@gmail.com --agree-tos --no-eff-email --keep-until-expiring -d krw.ddns.net -d www.krw.ddns.net

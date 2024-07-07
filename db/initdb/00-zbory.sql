@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS `Zbory` (
     `name` varchar(45) NOT NULL,
     `lang` char(3) NOT NULL DEFAULT 'pl',
     `plimit` int NOT NULL DEFAULT 2,
+    `tura` int NOT NULL DEFAULT 1,
     PRIMARY KEY (`id`),
     UNIQUE KEY `id_UNIQUE` (`id`),
     UNIQUE KEY `number_UNIQUE` (`number`),

@@ -98,7 +98,7 @@ mkdir -p /webroot/srp
 mkdir -p /webroot/ia
 mkdir -p /webroot/pk
 mkdir -p /webroot/sektor
-mkdir -p /webroot/scanner
+mkdir -p /webroot/skaner
 mkdir -p /webroot/czw
 mkdir -p /webroot/przyjazdy
 
@@ -107,6 +107,6 @@ cp -f -r /devel/srp/dist/* /webroot/srp
 cp -f -r /devel/ia/dist/* /webroot/ia
 cp -f -r /devel/pk/dist/* /webroot/pk
 cp -f -r /devel/sektor/dist/* /webroot/sektor
-cp -f -r /devel/scanner/dist/* /webroot/scanner
+cp -f -r /devel/scanner/dist/* /webroot/skaner
 cp -f -r /devel/czw/dist/* /webroot/czw
 cp -f -r /devel/przyjazdy/dist/* /webroot/przyjazdy

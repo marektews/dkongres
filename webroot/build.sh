@@ -21,6 +21,7 @@ git clone https://github.com/marektews/sektor.git
 git clone https://github.com/marektews/scanner.git
 git clone https://github.com/marektews/czw.git
 git clone https://github.com/marektews/przyjazdy.git
+git clone https://github.com/marektews/rja.git
 
 cd /devel/admlogin
 npm install --no-fund
@@ -79,6 +80,10 @@ cd /devel/przyjazdy
 npm install --no-fund
 npm run build
 
+cd /devel/rja
+npm install --no-fund
+npm run build
+
 # kopiowanie do lokalizacji webroot
 mkdir -p /webroot/admin/sra
 mkdir -p /webroot/admin/srp
@@ -101,6 +106,7 @@ mkdir -p /webroot/sektor
 mkdir -p /webroot/skaner
 mkdir -p /webroot/czw
 mkdir -p /webroot/przyjazdy
+mkdir -p /webroot/rja
 
 cp -f -r /devel/sra/dist/* /webroot/sra
 cp -f -r /devel/srp/dist/* /webroot/srp
@@ -110,3 +116,4 @@ cp -f -r /devel/sektor/dist/* /webroot/sektor
 cp -f -r /devel/scanner/dist/* /webroot/skaner
 cp -f -r /devel/czw/dist/* /webroot/czw
 cp -f -r /devel/przyjazdy/dist/* /webroot/przyjazdy
+cp -f -r /devel/rja/dist/* /webroot/rja

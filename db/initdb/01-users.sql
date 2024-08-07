@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
     `is_rja` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Czy ma dostep do RJA',
     `is_monitoring` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Czy ma dostep do Monitoring',
     `is_users` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Czy dostep do listy użytkowników',
+    `is_limits` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Czy dostep do limitów',
     PRIMARY KEY (`id`),
     UNIQUE KEY `id_UNIQUE` (`id`),
     UNIQUE KEY `login_UNIQUE` (`login`),

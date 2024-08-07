@@ -1,8 +1,9 @@
 FROM alpine:edge
 
 ENV PYTHONUNBUFFERED=1
+ENV TZ=Europe/Warsaw
 
-RUN apk add --update --no-cache mc python3 pkgconfig bash \
+RUN apk add --update --no-cache mc python3 pkgconfig bash tzdata \
 py3-pip py3-setuptools py3-wheel py3-cairo py3-openpyxl openssl \
 py3-flask py3-flask-login py3-flask-sqlalchemy py3-mysqlclient py3-gunicorn
     
